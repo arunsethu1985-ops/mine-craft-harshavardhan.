@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GALAXY BLOCKVERSE 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="startScreen">
+    <h1>🌌 GALAXY BLOCKVERSE</h1>
+    <h2>3D WORLD</h2>
+    <p>Explore, mine, build and survive!</p>
+    <button id="startBtn">PLAY GAME</button>
+    <p class="help">
+      WASD - Move | Mouse - Look<br>
+      Left Click - Break | Right Click - Place<br>
+      Space - Jump | F - Fly Mode<br>
+      1-6 - Select Block | Shift - Sprint<br>
+      Esc - Pause
+    </p>
+  </div>
+
+  <div id="hud">
+    <div id="topbar">
+      <span>🌌 GALAXY BLOCKVERSE</span>
+      <span id="coordinates">XYZ: 0, 0, 0</span>
+      <span id="mode">CREATIVE MODE</span>
+    </div>
+
+    <div id="crosshair">+</div>
+
+    <div id="bottomHud">
+      <div id="hotbar">
+        <div class="slot selected" data-block="1">🟩<small>1</small></div>
+        <div class="slot" data-block="2">🟫<small>2</small></div>
+        <div class="slot" data-block="3">🪨<small>3</small></div>
+        <div class="slot" data-block="4">🪵<small>4</small></div>
+        <div class="slot" data-block="5">🍃<small>5</small></div>
+        <div class="slot" data-block="6">🏖️<small>6</small></div>
+      </div>
+      <p id="blockName">Grass Block</p>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

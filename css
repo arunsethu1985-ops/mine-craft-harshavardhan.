@@ -1,0 +1,139 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #78baff;
+  color: white;
+  user-select: none;
+}
+
+canvas {
+  display: block;
+}
+
+#startScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, #071426, #193b58, #12604b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+#startScreen h1 {
+  font-size: clamp(30px, 6vw, 60px);
+  color: #70ffb0;
+  text-shadow: 0 0 20px #20e98c;
+  margin-bottom: 5px;
+}
+
+#startScreen h2 {
+  color: #b8dcff;
+  letter-spacing: 7px;
+}
+
+#startBtn {
+  margin: 25px;
+  padding: 17px 55px;
+  border: 2px solid #98ffd1;
+  border-radius: 10px;
+  background: #10a668;
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#startBtn:hover {
+  background: #16d388;
+  transform: scale(1.06);
+}
+
+.help {
+  line-height: 2;
+  color: #c9dce9;
+}
+
+#hud {
+  display: none;
+  pointer-events: none;
+}
+
+#topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px black;
+}
+
+#bottomHud {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#hotbar {
+  display: flex;
+  gap: 7px;
+  pointer-events: auto;
+}
+
+.slot {
+  width: 60px;
+  height: 60px;
+  background: rgba(25, 25, 25, 0.7);
+  border: 3px solid #666;
+  border-radius: 7px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.slot.selected {
+  border-color: #ffe66c;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.slot small {
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  font-size: 12px;
+}
+
+#blockName {
+  text-shadow: 1px 2px 4px black;
+  font-weight: bold;
+}

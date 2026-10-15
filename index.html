@@ -3,46 +3,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GALAXY BLOCKVERSE 3D</title>
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1">
+  <title>GALAXY BLOCKVERSE — Survival</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="startScreen">
+  <main id="menu">
     <h1>🌌 GALAXY BLOCKVERSE</h1>
-    <h2>3D WORLD</h2>
-    <p>Explore, mine, build and survive!</p>
-    <button id="startBtn">PLAY GAME</button>
-    <p class="help">
-      WASD - Move | Mouse - Look<br>
-      Left Click - Break | Right Click - Place<br>
-      Space - Jump | F - Fly Mode<br>
-      1-6 - Select Block | Shift - Sprint<br>
-      Esc - Pause
+    <h2>PIXEL SURVIVAL</h2>
+    <button id="play">▶ PLAY / RESUME</button>
+    <button id="reset" class="danger">RESET WORLD</button>
+    <p>
+      WASD Move · Mouse Look · Space Jump
+      <br>Shift Sneak · Ctrl Sprint · F Fly · G Creative
+      <br>Left Click Mine · Right Click Place / Interact
+      <br>1–9 Hotbar · E Inventory · C Crafting
+      <br>R Eat · V Visit Village · P Save · Esc Pause
     </p>
-  </div>
+  </main>
 
-  <div id="hud">
-    <div id="topbar">
-      <span>🌌 GALAXY BLOCKVERSE</span>
-      <span id="coordinates">XYZ: 0, 0, 0</span>
-      <span id="mode">CREATIVE MODE</span>
+  <div id="hud" hidden>
+    <div id="top">
+      <strong>GALAXY BLOCKVERSE</strong>
+      <div id="coords">XYZ 0 0 0</div>
+      <div id="biome">Plains</div>
     </div>
-
+    <div id="stats">
+      ❤️ <span id="health">20</span>
+      🍗 <span id="food">20</span>
+      <span id="mode">SURVIVAL</span>
+    </div>
     <div id="crosshair">+</div>
-
-    <div id="bottomHud">
-      <div id="hotbar">
-        <div class="slot selected" data-block="1">🟩<small>1</small></div>
-        <div class="slot" data-block="2">🟫<small>2</small></div>
-        <div class="slot" data-block="3">🪨<small>3</small></div>
-        <div class="slot" data-block="4">🪵<small>4</small></div>
-        <div class="slot" data-block="5">🍃<small>5</small></div>
-        <div class="slot" data-block="6">🏖️<small>6</small></div>
-      </div>
-      <p id="blockName">Grass Block</p>
+    <div id="notice"></div>
+    <div id="bottom">
+      <div id="hotbar"></div>
+      <strong id="selection"></strong>
     </div>
   </div>
+
+  <section id="panel" hidden>
+    <header>
+      <h2 id="panelTitle">Inventory</h2>
+      <button id="close">CLOSE & RESUME</button>
+    </header>
+    <p id="help"></p>
+    <div id="entries"></div>
+  </section>
 
   <script type="module" src="script.js"></script>
 </body>

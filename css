@@ -1,11 +1,10 @@
 
-:root {
-  --bg: #16252e;
-  --green: #76a956;
-  --border: #9ba7a1;
-  --panel: #29373a;
-  --text: #ffffff;
-}
+/* =========================================
+   GALAXY BLOCKVERSE
+   COMPLETE GAME STYLESHEET
+   ========================================= */
+
+/* GLOBAL */
 
 * {
   box-sizing: border-box;
@@ -21,15 +20,14 @@ body {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: #152333;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   user-select: none;
 }
 
 canvas {
-  position: fixed;
-  inset: 0;
   display: block;
   image-rendering: pixelated;
 }
@@ -38,15 +36,18 @@ canvas {
   display: none !important;
 }
 
+/* BUTTONS */
+
 button {
-  appearance: none;
-  border: 2px solid #314d33;
-  background: var(--green);
+  background: #619e48;
   color: white;
-  font: 800 14px Arial, sans-serif;
-  padding: 12px 18px;
+  border: 2px solid #314b2d;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: inset 0 -3px #426b3a;
+  transition: filter 0.15s ease;
 }
 
 button:hover {
@@ -54,276 +55,287 @@ button:hover {
 }
 
 button:disabled {
-  cursor: default;
-  opacity: .35;
-}
-
-.primary {
-  min-width: 240px;
-  background: #6bab4e;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .danger {
-  min-width: 240px;
-  background: #9d4d4d;
-  border-color: #6a3434;
-  box-shadow: inset 0 -3px #663636;
+  background: #a34b4b;
+  border-color: #693434;
 }
+
+/* MAIN MENU */
 
 #menu {
   position: fixed;
   inset: 0;
-  z-index: 20;
-  background:
-    radial-gradient(circle at 50% 35%, #315f53, transparent 55%),
-    linear-gradient(135deg, #132333, #24422d);
+  z-index: 10;
+
+  background: linear-gradient(
+    135deg,
+    #15283af5,
+    #255139f5
+  );
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 13px;
-  padding: 24px;
-  text-align: center;
-  overflow: auto;
-}
 
-.brand {
-  font-size: 23px;
-  letter-spacing: 8px;
-  font-weight: 900;
-  color: #b8e4ff;
+  text-align: center;
+  gap: 14px;
+  padding: 20px;
+  overflow-y: auto;
 }
 
 #menu h1 {
-  font-size: clamp(34px, 7vw, 74px);
-  color: #b6e48b;
-  text-shadow: 5px 5px #25452c;
+  font-size: clamp(32px, 6vw, 64px);
+  color: #a9ed83;
+  text-shadow: 4px 4px #29422b;
   margin: 0;
 }
 
-#menu > p {
-  letter-spacing: 3px;
-  color: #e0efdc;
+#menu h2 {
+  margin: 0;
+  color: #ffe1a1;
+  letter-spacing: 4px;
 }
 
-.instructions {
-  margin-top: 13px;
-  width: min(600px, 95vw);
-  background: #0005;
-  border: 1px solid #879f8b;
-  padding: 15px;
+#menu p {
   line-height: 2;
+  max-width: 750px;
 }
 
-.instructions strong {
-  color: #f8df9a;
-}
-
-.instructions p {
-  margin: 6px 0 0;
-  font-size: 12px;
-}
+/* HUD */
 
 #hud {
   position: fixed;
   inset: 0;
-  z-index: 5;
   pointer-events: none;
 }
 
-.top-left,
-#status {
+/* GAME INFORMATION */
+
+#top,
+#stats {
   position: absolute;
   left: 12px;
-  padding: 10px 13px;
-  background: #101716b8;
-  border: 1px solid #ffffff50;
-  text-shadow: 1px 1px 2px black;
-  font-family: monospace;
+  background: #000a;
+  padding: 11px;
+  border: 1px solid #ffffff55;
+}
+
+#top {
+  top: 12px;
   line-height: 1.7;
 }
 
-.top-left {
-  top: 12px;
+#stats {
+  top: 115px;
 }
 
-.game-name {
-  color: #c1ecaa;
-  font-weight: bold;
+#fps {
+  color: #a9ed83;
+  font-weight: 700;
 }
 
-#status {
-  top: 133px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-#mode {
-  color: #ffe7a1;
-}
+/* CROSSHAIR */
 
 #crosshair {
   position: absolute;
   left: 50%;
   top: 50%;
+
   transform: translate(-50%, -50%);
-  color: #fff;
-  font: bold 32px monospace;
+
+  font-family: monospace;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+
   text-shadow:
-    1px 1px 2px black,
-    -1px -1px 2px black;
+    1px 1px 4px black,
+    -1px -1px 4px black;
 }
+
+/* GAME NOTIFICATIONS */
 
 #notice {
   position: absolute;
+  top: 59%;
   left: 50%;
-  top: 60%;
+
   transform: translateX(-50%);
-  font-size: 17px;
-  font-weight: 800;
+
   text-align: center;
-  white-space: nowrap;
+  font-weight: bold;
+  color: white;
+
   text-shadow: 2px 2px 3px black;
 }
+
+/* HOTBAR AREA */
 
 #bottom {
   position: absolute;
   left: 50%;
-  bottom: 17px;
+  bottom: 16px;
+
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  text-align: center;
 }
 
 #hotbar {
-  background: #111b1be0;
-  padding: 5px;
-  border: 3px solid #8e9690;
   display: flex;
   gap: 3px;
+
+  padding: 5px;
+  background: #101010cc;
+  border: 3px solid #999999;
 }
 
+/* INDIVIDUAL INVENTORY SLOTS */
+
 .slot {
-  width: 48px;
-  height: 48px;
-  background: #47534d;
-  border: 2px solid #727e76;
+  height: 47px;
+  width: 47px;
+
+  background: #394349;
+  border: 2px solid #747979;
+
   display: grid;
   place-items: center;
+
   position: relative;
-  font-size: 24px;
+  font-size: 23px;
 }
 
 .slot.active {
-  background: #748d65;
   border: 3px solid white;
+  background: #637b60;
 }
 
 .slot small {
   position: absolute;
   bottom: 1px;
-  right: 2px;
+  right: 3px;
+
   font-size: 10px;
-  text-shadow: 1px 1px black;
+  color: white;
 }
 
-#itemName {
-  font-weight: bold;
-  text-shadow: 2px 2px 3px black;
+/* SELECTED ITEM LABEL */
+
+#selection {
+  display: block;
+  margin-top: 7px;
+  text-shadow: 1px 2px black;
 }
+
+/* INVENTORY / CRAFTING PANEL */
 
 #panel {
   position: fixed;
-  z-index: 30;
+  z-index: 15;
+
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
-  background: var(--panel);
-  border: 4px solid var(--border);
-  box-shadow: 0 15px 60px #000c;
-  width: min(730px, 96vw);
-  max-height: 87vh;
-  padding: 19px;
+
+  width: min(700px, 95vw);
+  max-height: 86vh;
+
   overflow-y: auto;
+
+  background: #2b3438;
+  border: 4px solid #829390;
+
+  padding: 18px;
+
+  box-shadow: 0 15px 60px #000b;
 }
 
-.panel-head {
+/* PANEL HEADER */
+
+#panel header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
-.panel-head h2 {
+#panel h2 {
   margin: 0;
-  color: #d8f0b7;
+  color: #c5e7a9;
 }
 
-#panelHelp {
-  color: #c1d3ca;
+/* PANEL HELP TEXT */
+
+#help {
+  color: #bfd0c5;
+  line-height: 1.5;
 }
 
-#panelItems {
+/* INVENTORY ENTRIES */
+
+#entries {
   display: flex;
   flex-direction: column;
   gap: 7px;
 }
 
-.item-row {
+.entry {
   display: flex;
   align-items: center;
-  gap: 9px;
-  border: 1px solid #697d79;
-  background: #3e4b49;
-  padding: 10px;
+  gap: 8px;
+
+  background: #424c4e;
+  padding: 9px;
+  border: 1px solid #657475;
 }
 
-.item-info {
+.entry .info {
   flex: 1;
-  min-width: 0;
 }
 
-.item-info strong,
-.item-info small {
+.entry strong,
+.entry small {
   display: block;
 }
 
-.item-info small {
-  color: #c5d3cb;
-  margin-top: 5px;
+.entry small {
+  margin-top: 4px;
+  color: #c4d0cc;
 }
 
-.item-row button {
-  font-size: 12px;
-  padding: 9px 12px;
-}
+/* RESPONSIVE SMALL SCREEN */
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
   .slot {
     width: 34px;
-    height: 39px;
+    height: 38px;
     font-size: 18px;
   }
 
-  .top-left,
-  #status {
+  #top,
+  #stats {
     font-size: 11px;
   }
 
-  #status {
-    top: 126px;
-    gap: 9px;
-  }
-
-  .item-row {
+  .entry {
     flex-wrap: wrap;
   }
 
-  .item-info {
+  .entry .info {
     flex-basis: 100%;
+  }
+
+  #panel header {
+    flex-wrap: wrap;
+  }
+
+  #menu h1 {
+    font-size: 34px;
   }
 }

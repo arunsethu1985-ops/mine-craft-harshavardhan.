@@ -2,55 +2,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width,initial-scale=1">
-  <title>GALAXY BLOCKVERSE — Survival</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#263d36">
+<title>GALAXY BLOCKVERSE</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main id="menu">
-    <h1>🌌 GALAXY BLOCKVERSE</h1>
-    <h2>PIXEL SURVIVAL</h2>
-    <button id="play">▶ PLAY / RESUME</button>
-    <button id="reset" class="danger">RESET WORLD</button>
-    <p>
-      WASD Move · Mouse Look · Space Jump
-      <br>Shift Sneak · Ctrl Sprint · F Fly · G Creative
-      <br>Left Click Mine · Right Click Place / Interact
-      <br>1–9 Hotbar · E Inventory · C Crafting
-      <br>R Eat · V Visit Village · P Save · Esc Pause
-    </p>
-  </main>
 
-  <div id="hud" hidden>
-    <div id="top">
-      <strong>GALAXY BLOCKVERSE</strong>
-      <div id="coords">XYZ 0 0 0</div>
-      <div id="biome">Plains</div>
-    </div>
-    <div id="stats">
-      ❤️ <span id="health">20</span>
-      🍗 <span id="food">20</span>
-      <span id="mode">SURVIVAL</span>
-    </div>
-    <div id="crosshair">+</div>
-    <div id="notice"></div>
-    <div id="bottom">
-      <div id="hotbar"></div>
-      <strong id="selection"></strong>
-    </div>
+<main id="menu">
+  <div class="brand">🌌 GALAXY</div>
+  <h1>BLOCKVERSE</h1>
+  <p>THE VOXEL SURVIVAL WORLD</p>
+  <button id="play" class="primary">▶ PLAY WORLD</button>
+  <button id="reset" class="danger">RESET SAVED WORLD</button>
+
+  <div class="instructions">
+    <strong>GAME CONTROLS</strong>
+    <p>
+      WASD — Move · Mouse — Look<br>
+      Space — Jump · Ctrl — Sprint · Shift — Sneak<br>
+      Left Click — Mine / Attack<br>
+      Right Click — Place / Interact<br>
+      1–9 — Hotbar · E — Inventory · C — Crafting<br>
+      R — Eat · F — Fly · X — Fly Down<br>
+      G — Creative · V — Village · P — Save<br>
+      Esc — Pause
+    </p>
+  </div>
+</main>
+
+<div id="hud" hidden>
+  <div class="top-left">
+    <div class="game-name">GALAXY BLOCKVERSE</div>
+    <div id="coords">XYZ 0 0 0</div>
+    <div id="biome">Plains</div>
+    <div id="fps">FPS --</div>
   </div>
 
-  <section id="panel" hidden>
-    <header>
-      <h2 id="panelTitle">Inventory</h2>
-      <button id="close">CLOSE & RESUME</button>
-    </header>
-    <p id="help"></p>
-    <div id="entries"></div>
-  </section>
+  <div id="status">
+    <span>❤️ <b id="health">20</b></span>
+    <span>🍗 <b id="food">20</b></span>
+    <span id="mode">SURVIVAL</span>
+  </div>
 
-  <script type="module" src="script.js"></script>
+  <div id="crosshair">+</div>
+  <div id="notice"></div>
+
+  <div id="bottom">
+    <div id="hotbar"></div>
+    <div id="itemName"></div>
+  </div>
+</div>
+
+<section id="panel" hidden>
+  <header class="panel-head">
+    <h2 id="panelTitle">INVENTORY</h2>
+    <button id="closePanel">✕ CLOSE & RESUME</button>
+  </header>
+  <p id="panelHelp"></p>
+  <div id="panelItems"></div>
+</section>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
